@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CreateHeart">
+        <attr name="selected" format="boolean"/>
+        <attr name="not_selected" format="boolean"/>
+        <attr name="heart_amount" format="integer"/>
+        <attr name="heart_location" format="integer"/>
+    </declare-styleable>
+</resources>

@@ -57,10 +57,8 @@ class BlankFragment : DialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         add_to_list.setOnClickListener {
-            listener?.onFragmentInteraction(edit_text.text.toString(), rating_bar.rating)
+            listener?.onFragmentInteraction(CreateItem(edit_text.text.toString(), CreateHeart(context, null).heartLocation))
         }
-
-
 
         super.onViewCreated(view, savedInstanceState)
     }
@@ -76,7 +74,7 @@ class BlankFragment : DialogFragment() {
 
 
     interface OnFragmentInteractionListener {
-        fun onFragmentInteraction(name: String, rating: Float)
+        fun onFragmentInteraction(createItem: CreateItem)
     }
 
 

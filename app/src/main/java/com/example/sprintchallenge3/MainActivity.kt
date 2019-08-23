@@ -9,8 +9,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity(), BlankFragment.OnFragmentInteractionListener {
     val list = ArrayList<CreateItem>()
 
-    override fun onFragmentInteraction(name: String, rating: Float) {
-        list.add(CreateItem(name, rating))
+    override fun onFragmentInteraction(createItem: CreateItem) {
+        list.add(createItem)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
