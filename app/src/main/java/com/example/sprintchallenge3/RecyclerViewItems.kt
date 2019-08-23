@@ -15,7 +15,8 @@ class RecyclerViewItems(val data: ArrayList<CreateItem>) : RecyclerView.Adapter<
     override fun getItemCount(): Int = data.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-
+        holder.nameLocation.text = data[position].name
+        holder.ratingLocation.text = data[position].rating.toString()
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
