@@ -15,14 +15,10 @@ import kotlinx.android.synthetic.main.display_fragment.*
 
 class CreateFragment: DialogFragment() {
 
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.display_fragment, container, false)
-
-        add_to_list.setOnClickListener {
-
-        }
-
         return view
     }
+
+
 }
