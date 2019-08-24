@@ -1,12 +1,12 @@
 package com.example.sprintchallenge3
 
 import android.content.Context
-import android.graphics.drawable.Animatable
+import android.graphics.drawable.AnimatedVectorDrawable
+import android.graphics.drawable.Drawable
 import android.util.AttributeSet
 import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.core.content.ContextCompat
-import kotlinx.android.synthetic.main.display_fragment.view.*
 
 class CreateHeart (context: Context?, attrs: AttributeSet?): LinearLayout(context, attrs){
 
@@ -38,17 +38,29 @@ class CreateHeart (context: Context?, attrs: AttributeSet?): LinearLayout(contex
             createImage.setImageDrawable(fillHeart)
             addView(createImage)
 
+            var count = 0
             createImage.setOnClickListener {
                 val location = it.tag.toString().toInt()
 
-                if (notFilledHearts!!) {
+                if (count == 0) {
+                    count++
                     for (i in 0 until location){
-                        val test = getChildAt(i)
-                        (test as Animatable).start()
+                        val heartScale = getChildAt(i) as ImageView
+                        heartScale.setImageDrawable(fillHeart)
+                        (heartScale.drawable as AnimatedVectorDrawable).start()
+                        whyDoesThisWork = location
                     }
+                }
 
-
-                    whyDoesThisWork = location
+                else{
+                    count--
+                    for (j in location until childCount){
+                        val emptyHeart = getChildAt(j) as ImageView
+                        val emptyHeartImage = ContextCompat.getDrawable(context, R.drawable.empty_heart)
+                        emptyHeart.setImageDrawable(emptyHeartImage)
+                        (emptyHeartImage as AnimatedVectorDrawable).start()
+                        whyDoesThisWork = location
+                    }
                 }
 
             }
