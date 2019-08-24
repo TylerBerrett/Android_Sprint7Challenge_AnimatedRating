@@ -43,11 +43,11 @@ class CreateHeart (context: Context?, attrs: AttributeSet?): LinearLayout(contex
 
                 if (notFilledHearts!!) {
                     for (i in 0 until location){
-                        println(i)
-
+                        val test = getChildAt(i)
+                        (test as Animatable).start()
                     }
 
-                    (fillHeart as Animatable).start()
+
                     whyDoesThisWork = location
                 }
 
