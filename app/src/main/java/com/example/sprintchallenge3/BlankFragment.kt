@@ -58,6 +58,7 @@ class BlankFragment : DialogFragment() {
 
         add_to_list.setOnClickListener {
             listener?.onFragmentInteraction(CreateItem(edit_text.text.toString(), CreateHeart(context, null).heartLocation))
+            dismiss()
         }
 
         super.onViewCreated(view, savedInstanceState)
