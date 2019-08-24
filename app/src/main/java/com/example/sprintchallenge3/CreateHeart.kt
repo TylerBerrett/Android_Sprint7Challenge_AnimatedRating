@@ -40,7 +40,13 @@ class CreateHeart (context: Context?, attrs: AttributeSet?): LinearLayout(contex
 
             createImage.setOnClickListener {
                 val location = it.tag.toString().toInt()
+
                 if (notFilledHearts!!) {
+                    for (i in 0 until location){
+                        println(i)
+
+                    }
+
                     (fillHeart as Animatable).start()
                     whyDoesThisWork = location
                 }
